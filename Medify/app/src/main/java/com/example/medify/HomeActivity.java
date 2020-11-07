@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,7 +52,6 @@ public class HomeActivity extends AppCompatActivity
 
     RadioButton patientConscRB, bloodLossRB, patientGenderRB;
 
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -76,7 +76,10 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                String paramedicName = firebaseAuth.getCurrentUser().toString();
+
+
+                String paramedicName = getIntent().getStringExtra("EMAIL_ID");
+//                String paramedicName = firebaseAuth.getCurrentUser().toString();
 
                 String patientDesc = patientDescET.getText().toString();
 

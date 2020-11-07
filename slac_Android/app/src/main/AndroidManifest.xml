@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.gupshup">
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE "
+        tools:remove="android:maxSdkVersion" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE "
+        tools:remove="android:maxSdkVersion" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".Notifications.ChatMessagingService"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Chat.ChatActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Password.ResetPasswordActivity" />
+        <activity android:name=".Password.ChangePasswordActivity" />
+        <activity android:name=".Profile.ProfileActivity" />
+        <activity android:name=".SignUp.SignUpActivity" />
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SelectFriend.SelectFriendActivity" />
+    </application>
+
+</manifest>

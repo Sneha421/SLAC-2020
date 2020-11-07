@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1072336588842",
+    "firebase_url": "https://medify-53ba9.firebaseio.com",
+    "project_id": "medify-53ba9",
+    "storage_bucket": "medify-53ba9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072336588842:android:736f26f1dde26c790bb353",
+        "android_client_info": {
+          "package_name": "com.example.medify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072336588842-4an8saljlr3j8lebc8dc9n8c6pojiu0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9TEt1O20TSmFK1rQuyeNskzMHw6Fm9jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072336588842-4an8saljlr3j8lebc8dc9n8c6pojiu0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

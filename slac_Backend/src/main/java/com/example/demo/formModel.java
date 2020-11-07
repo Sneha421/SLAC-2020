@@ -3,19 +3,14 @@ package com.example.demo;
 
 public class formModel
 {
-    private int formID;
     private String paramedicName;
     private int patientAge;
     private String patientGender;
     private String patientConsc;
+    private String patientDesc;
+    private String accidentCategory;
+    private String bloodLoss;
 
-    public int getFormID() {
-        return formID;
-    }
-
-    public void setFormID(int formID) {
-        this.formID = formID;
-    }
 
     public String getParamedicName() {
         return paramedicName;
@@ -49,6 +44,14 @@ public class formModel
         this.patientConsc = patientConsc;
     }
 
+    public String getPatientDesc() {
+        return patientDesc;
+    }
+
+    public void setPatientDesc(String patientDesc) {
+        this.patientDesc = patientDesc;
+    }
+
     public String getAccidentCategory() {
         return accidentCategory;
     }
@@ -57,25 +60,11 @@ public class formModel
         this.accidentCategory = accidentCategory;
     }
 
-    public String getAccidentDesc() {
-        return accidentDesc;
+    public String getBloodLoss() {
+        return bloodLoss;
     }
 
-    public void setAccidentDesc(String accidentDesc) {
-        this.accidentDesc = accidentDesc;
+    public void setBloodLoss(String bloodLoss) {
+        this.bloodLoss = bloodLoss;
     }
-
-    public String getBloodLossRange() {
-        return bloodLossRange;
-    }
-
-    public void setBloodLossRange(String bloodLossRange) {
-        this.bloodLossRange = bloodLossRange;
-    }
-
-    private String accidentCategory;
-    private String accidentDesc;
-    private String bloodLossRange;
-
-
 }

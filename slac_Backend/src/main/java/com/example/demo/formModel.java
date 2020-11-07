@@ -3,9 +3,19 @@ package com.example.demo;
 
 public class formModel
 {
+    private int formID;
     private String paramedicName;
     private int patientAge;
     private String patientGender;
+
+    public int getFormID() {
+        return formID;
+    }
+
+    public void setFormID(int formID) {
+        this.formID = formID;
+    }
+
     private String patientConsc;
     private String patientDesc;
     private String accidentCategory;

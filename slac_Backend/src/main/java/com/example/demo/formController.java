@@ -33,6 +33,7 @@ public class formController
         {
             formModel formModel = new formModel();
 
+            formModel.setFormID(formDataResult.getInt("formID"));
             formModel.setParamedicName(formDataResult.getString("paramedicName"));
             formModel.setPatientDesc(formDataResult.getString("patientDesc"));
             formModel.setPatientAge(formDataResult.getInt("patientAge"));

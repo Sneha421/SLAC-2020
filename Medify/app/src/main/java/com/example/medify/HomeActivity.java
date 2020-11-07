@@ -11,8 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     Button btnSubmit;
-    FirebaseAuth mFirebaseAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +21,7 @@ public class HomeActivity extends AppCompatActivity {
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+            public void onClick(View view) {
             }
         });
     }

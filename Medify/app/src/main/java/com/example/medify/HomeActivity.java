@@ -8,6 +8,10 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,18 +43,59 @@ public class HomeActivity extends AppCompatActivity
 {
     Button btnSubmit;
 
+    TextView patientAgeTV, patientConscTV, bloodLossTV, patientGenderTV, patientDescTV, accidentCategoryTV;
 
+    EditText patientAgeET, patientDescET, accidentCategoryET;
+
+    RadioGroup patientConscRG, bloodLossRG, patientGenderRG;
+
+    RadioButton patientConscRB, bloodLossRB, patientGenderRB;
+
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         btnSubmit = findViewById(R.id.button);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        patientAgeET = findViewById(R.id.patientAgeET);
+        accidentCategoryET = findViewById(R.id.accidentCategoryET);
+        patientDescET = findViewById(R.id.patientDescET);
+
+        patientConscRG = findViewById(R.id.patientConscRG);
+        bloodLossRG = findViewById(R.id.bloodLossRG);
+        patientGenderRG = findViewById(R.id.patientGenderRG);
+
+
+
+        btnSubmit.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
+                String paramedicName = firebaseAuth.getCurrentUser().toString();
+
+                String patientDesc = patientDescET.getText().toString();
+
+                String patientAge = patientAgeET.getText().toString();
+
+                String accidentCategory = accidentCategoryET.getText().toString();
+
+                int selectedConsc = patientConscRG.getCheckedRadioButtonId();
+                patientConscRB = (RadioButton) findViewById(selectedConsc);
+                String patientConsc = patientConscRB.getText().toString();
+
+                int selectedGender = patientGenderRG.getCheckedRadioButtonId();
+                patientGenderRB = (RadioButton) findViewById(selectedGender);
+                String patientGender = patientGenderRB.getText().toString();
+
+                int selectedBloodLoss= bloodLossRG.getCheckedRadioButtonId();
+                bloodLossRB = (RadioButton) findViewById(selectedBloodLoss);
+                String bloodLoss = bloodLossRB.getText().toString();
+
 
                 new Thread(new Runnable()
                 {
@@ -60,8 +105,13 @@ public class HomeActivity extends AppCompatActivity
                         try
                         {
                             RequestBody formBody = new FormBody.Builder()
-                                    .add("formID", "3")
-                                    .add("paramedicName", "para3@gmail.com")
+                                    .add("paramedicName", paramedicName)
+                                    .add("patientDesc",patientDesc)
+                                    .add("patientAge",patientAge)
+                                    .add("patientConsc",patientConsc)
+                                    .add("patientGender",patientGender)
+                                    .add("accidentCategory",accidentCategory)
+                                    .add("bloodLoss",bloodLoss)
                                     .build();
 
                             Request request = new Request.Builder()

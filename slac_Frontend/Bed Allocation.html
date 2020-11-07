@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Bed Allocation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style1.css">
+</head>
+<body>
+<header class="main1" style="text-align: right">
+    <img src="Images1/Logo.png" style="width: 70px;height:  80px;">
+    <h1 style="font-family: 'Baskerville Old Face'">
+        <strong>
+            MEDIFY
+        </strong>
+    </h1>
+</header>
+<header class="main-header">
+    <nav class="nav main-nav">
+        <ul>
+            <li>
+                <a href="Patient%20info.html" target="_blank">Patient Information</a>
+            </li>
+            <li>
+                <a href="Surgery%20Status.html" target="_blank">Surgery Status</a>
+            </li>
+            <li>
+                <a href="Bed%20Allocation.html" target="_self">Bed allocation</a>
+            </li>
+            <li>
+                <a href="Blood%20Bank.html" target="_blank">Blood Bank</a>
+            </li>
+            <li>
+                <a href="generalPatients.html" target="_blank">OPD</a>
+            </li>
+        </ul>
+    </nav>
+    <hr>
+    <h3><strong>BED ALLOCATION</strong></h3>
+    <hr>
+    <hr>
+    <br>
+    <div >
+        <table style="text-align: center" align="right">
+            <tr>
+                <td colspan="10"></td>
+                <td align="center"> <div id="driver"></div> </td>
+            </tr>
+            <tr>
+                <td><br>A1<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A2<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A3<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A4<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A5<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A6<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A7<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A8<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A9<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>A10<div class="seat"></div><br></td>
+            </tr>
+            <tr>
+                <td><br>B1<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B2<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B3<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B4<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B5<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B6<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B7<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B8<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B9<div class="seat"></div><br></td>
+                <td class="walk">  </td>
+                <td><br>B10<div class="seat"></div><br></td>
+            </tr>
+        </table>
+        <table class="t1" align="center" >
+            <tr>
+                <td ><br>ALLOCATED&emsp;<div class="seat" style="background-color: red; text-align: left" >
+                    <br></div><br></td>
+                <br>
+                <br>
+                <td ><br>VACANT<div class="seat" ></div><br></td>
+            </tr>
+           <!-- <tr>
+
+            </tr>-->
+        </table>
+    </div>
+    <script>
+
+        allSeats = document.querySelectorAll('.seat');
+        for (var i = 0; i < allSeats.length; i++) {
+            var seat = allSeats[i];
+            seat.addEventListener('click', function () {
+                var bgclr = this.style.backgroundColor;
+                if(bgclr =='red')
+                    this.style.backgroundColor = 'darkgray'
+
+                else
+                    this.style.backgroundColor = 'red'
+
+                debugger
+            }, false);
+        }
+
+    </script>
+
+</header>
+
+</body>
+</html>

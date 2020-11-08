@@ -14,4 +14,8 @@ An additional feature of this widget allows the hospitals to send alerts to the 
 #### Code Component
 
 ##### 1. Medify
-Contains the Android apk that consists of the form, where the details will be filled by the paramedic and the f 
+Contains the Android APK which holds the form whose details will be filled by the paramedic. The entered details will then be sent to the SQL server.
+##### 2. slac-Backend
+Consists of Java APIs which is used to alterantively fetch and send data provided by the Angular JS.
+##### 3. slac-Frontend
+Consists of Four main .html files which take care of the Emergency patients information, Bed allocation for the patients, OPD patiends information and a page for alerting blood donors in the time of need.

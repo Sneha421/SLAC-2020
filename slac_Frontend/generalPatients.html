@@ -8,6 +8,7 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="Style1.css">
+    <script src="app.js"></script>
 </head>
 <body ng-app="myApp1" ng-controller="queueCtrl">
 <header class="main1" style="text-align: right">
@@ -43,7 +44,7 @@
     <h3><strong>GENERAL PATIENT INFORMATION(OPD)</strong></h3>
     <hr>
     <hr>
-    <form class="form-inline" >
+    <form class="form-inline" id="form1" >
         <div class="form-group">
             <label for="name" style="padding: 5px 5px">Patient Name:</label>
             <input ng-model="name" type="email" class="form-control" id="name">
@@ -56,14 +57,13 @@
             <label for="qNo" style="padding: 5px 5px;">Queue number:</label>
             <input type="number" ng-model="token" class="form-control" id="qNo">
         </div>
-        <button class="btn btn-default"
-                onclick="submit()" style="margin-left: 50px">Enter</button>
+        <button ng-click="submit()" style="margin-left: 50px">Enter</button>
     </form>
     
     
     <hr>
     <hr>
-    <table class="table">
+    <table class="table" id="queueTable">
         <thead class="thead-light">
         <tr>
             <th scope="col">Patient Name</th>
@@ -72,32 +72,17 @@
             <th scope="col">With Doctor</th>
         </tr>
         </thead>
-        <tr>
-            <th>Raju</th>
-            <th>948592011</th>
-            <th>214</th>
+        <tr ng-repeat="x in queue">
+            <th>{{ x.patientName }}</th>
+            <th>{{x.phoneNumber}}</th>
+            <th>{{x.tokeNumber}}</th>
             <th>
-                <input type="checkbox" id="switch"
-                       class="checkbox" />
-                <label for="switch" class="toggle">
-                    <p>    </p>
-                </label>
+                <input onclick="sendSMS(this)" type="radio" name="patient">
             </th>
         </tr>
     </table>
 </header>
-<script>
-    var app = angular.module('myApp1', []);
-    app.controller('queueCtrl', function($scope, $http) {
-        
-        submit = function()
-        {
-            $http.put("http://4d4d4999aade.ngrok.io/postQueue?patientName="+$scope.name+"&phoneNo="+$scope.number+"&tokenNo="+$scope.token)
-        }
-        
-        
-    });
-</script>
+
 
 </body>
 </html>

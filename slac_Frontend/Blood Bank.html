@@ -46,7 +46,7 @@
     <h5>
         Enter the required credentials to send out an alert
     </h5>
-    <form onsubmit="Confirm()">
+    <form>
         <br>
         <label for="bldgrp">Blood Group:</label><br>
         <select id="bldgrp" name="bldgrp">
@@ -65,7 +65,7 @@
                 id="locl" name="locl" rows="4" cols="50">
         </textarea>
         <br>
-        <button>Send Alert</button>
+        <button ng-click="Confirm()">Send Alert</button>
     </form>
 
 </header>
@@ -73,7 +73,7 @@
     var app = angular.module('myApp2', []);
     app.controller('Ctrl2', function($scope, $http) {
         
-        Confirm = function()
+        $scope.Confirm = function()
         {
             let selectElement = document.getElementById("bldgrp");
             let valueSelected = selectElement.options[selectElement.selectedIndex].value; // get selected option value

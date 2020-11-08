@@ -94,14 +94,14 @@ app.controller('patientInfoCtrl', function($scope, $http) {
         );
     }
      
-    DeleteRowFunc = function(element){
-        var formID = element.parentNode.parentNode.rowIndex
+    $scope.DeleteRowFunc = function(element){
+       var formID = element.parentNode.parentNode.rowIndex
      
       // event.target will be the input element.
       var td = event.target.parentNode; 
       var tr = td.parentNode; // the row to be removed
       tr.parentNode.removeChild(tr);   
-      $http.delete("http://4d4d4999aade.ngrok.io/removeEntry?formID="+formID);
+      $http.delete("http://localhost:8080/removeEntry?formID="+formID);
     }
 });
     </script>    

@@ -79,6 +79,24 @@ public class formController
         }
     }
 
+    @DeleteMapping(path = "/removeEntry")
+    public @ResponseBody void removeEntry(int formID) throws SQLException
+    {
+        String delQuery = "DELETE from patientInfo where formID = "+formID;
+        PreparedStatement delStatement = connection.prepareStatement(delQuery);
+
+        try
+        {
+            delStatement.executeUpdate();
+            delStatement.close();
+        }
+        catch (SQLException delError)
+        {
+            delError.printStackTrace();
+        }
+
+    }
+
 /*    String sql = "update  product  set Name = ?, Prodgroup= ?, Inventory= ?, onorder=? where id=?";
         try {
     PreparedStatement ps = conn.prepareStatement(sql);

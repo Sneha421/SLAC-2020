@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Out Patient Department</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="Style1.css">
+    <script src="app.js"></script>
 </head>
-<body>
+<body ng-app="myApp1" ng-controller="queueCtrl">
 <header class="main1" style="text-align: right">
     <img src="Images1/Logo.png" style="width: 70px;height:  80px;">
     <h1 style="font-family: 'Baskerville Old Face'">
@@ -42,67 +44,45 @@
     <h3><strong>GENERAL PATIENT INFORMATION(OPD)</strong></h3>
     <hr>
     <hr>
-    <form class="form-inline" >
+    <form class="form-inline" id="form1" >
         <div class="form-group">
             <label for="name" style="padding: 5px 5px">Patient Name:</label>
-            <input type="email" class="form-control" id="name">
+            <input ng-model="name" type="email" class="form-control" id="name">
         </div>
         <div class="form-group">
             <label for="cntct" style="padding: 5px 5px">Contact:</label>
-            <input type="number" class="form-control" id="cntct">
+            <input ng-model="number" type="number" class="form-control" id="cntct">
         </div>
         <div class="form-group">
             <label for="qNo" style="padding: 5px 5px;">Queue number:</label>
-            <input type="number" class="form-control" id="qNo">
+            <input type="number" ng-model="token" class="form-control" id="qNo">
         </div>
-        <button type="submit" class="btn btn-default"
-                style="margin-left: 50px">Enter</button>
+        <button ng-click="submit()" style="margin-left: 50px">Enter</button>
     </form>
+    
+    
     <hr>
     <hr>
-    <table class="table">
+    <table class="table" id="queueTable">
         <thead class="thead-light">
         <tr>
             <th scope="col">Patient Name</th>
             <th scope="col">Patient Contact</th>
             <th scope="col">Queue Number</th>
-            <th scope="col">Queue Status</th>
-            <th scope="col">Send Alert
-                <!--<button type="button">
-                    <a href="Patient%20Full%20Info.html">View full patient details</a>
-                </button>-->
-            </th>
+            <th scope="col">With Doctor</th>
         </tr>
         </thead>
-        <form onsubmit="Confirm()">
-            <tr>
-                <th>Trump</th>
-                <th>69966999</th>
-                <th>214</th>
-                <th>
-                    <input type="checkbox" id="switch"
-                           class="checkbox" />
-                    <label for="switch" class="toggle">
-                        <p>    </p>
-                    </label>
-                </th>
-                  <th>
-                      <input type="submit" value="Send alert">
-                </th>
-                <th>
-                    <button type="button">
-                        Check-in
-                    </button>
-                </th>
-            </tr>
-        </form>
+        <tr ng-repeat="x in queue">
+            <th>{{ x.patientName }}</th>
+            <th>{{x.phoneNumber}}</th>
+            <th>{{x.tokeNumber}}</th>
+            <th>
+                <input onclick="sendSMS(this)" type="radio" name="patient">
+            </th>
+        </tr>
     </table>
 </header>
-<script>
-    function Confirm(){
-        alert("The alert was sent out successfully!")
-    }
-</script>
+
 
 </body>
 </html>

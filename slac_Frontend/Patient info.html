@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">  
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <meta charset="UTF-8">
     <title>Emergency Patients Information</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="Style1.css">
 </head>
-<body>
+<body onload="getData()"  ng-app="myApp" ng-controller="patientInfoCtrl">
 <header class="main1" style="text-align: right">
     <img src="Images1/Logo.png" style="width: 70px;height:  80px;">
     <h1 style="font-family: 'Baskerville Old Face'">
@@ -62,15 +63,18 @@
             </th>
         </tr>
         </thead>
-        <tr>
-            <th>Trump</th>
-            <th>6996</th>
-            <th>70</th>
-            <th>Unknown</th>
-            <th>Severe</th>
-            <th>Loss in the Elections</th>
-            <th>High</th>
-            <th>patient is a blond duck</th>
+        <tr ng-repeat="x in names">
+       
+                <th>{{ x.paramedicName}}</th>
+                <th>{{ x.formID }}</th>
+                <th>{{ x.patientAge }}</th>
+                <th>{{ x.patientGender }}</th>
+                <th>{{ x.patientConsc }}</th>
+                <th>{{ x.accidentCategory }}</th>
+                <th>{{ x.bloodLoss }}</th>
+                <th>{{ x.patientDesc }}</th>
+
+            
             <th><!--View Full Patient Details-->
                 <button type="button" class="button" >
                     <a href="Patient%20Full%20Info.html" target="_blank">View </a>
@@ -85,4 +89,33 @@
     </table>
 </header>
 </body>
+
+<script>
+    var app = angular.module('myApp', []);
+app.controller('patientInfoCtrl', function($scope, $http) {
+    
+    getData = function()
+    {
+        setInterval(
+            function()
+            {
+                $http.get("http://4d4d4999aade.ngrok.io/getForm").then(function (response) {
+                $scope.names = response.data;
+                });
+            },1000
+        );
+    }
+     
+    DeleteRowFunc = function(element){
+        var formID = element.parentNode.parentNode.rowIndex
+     
+      // event.target will be the input element.
+      var td = event.target.parentNode; 
+      var tr = td.parentNode; // the row to be removed
+      tr.parentNode.removeChild(tr);   
+      $http.delete("http://4d4d4999aade.ngrok.io/removeEntry?formID="+formID);
+    }
+});
+    </script>    
+    
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">  
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <meta charset="UTF-8">
     <title>Emergency Patients Information</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="Style1.css">
@@ -44,8 +44,8 @@
     <hr>
     <table class="table">
         <thead class="thead-light">
-        <tr>
-            <th scope="col">Paramedic Name</th>
+        <tr style="text-align: center">
+            <th scope="col">Paramedic Email</th>
             <th scope="col">Patient ID</th>
             <th scope="col">Patient Age</th>
             <th scope="col">Patient Gender</th>
@@ -53,11 +53,6 @@
             <th scope="col">Accident Category</th>
             <th scope="col">Blood loss</th>
             <th scope="col">Patient description</th>
-            <th scope="col">View Full Patient Details
-                <!--<button type="button">
-                    <a href="Patient%20Full%20Info.html">View full patient details</a>
-                </button>-->
-            </th>
             <th scope="col">
                 Admit
             </th>
@@ -73,16 +68,9 @@
                 <th>{{ x.accidentCategory }}</th>
                 <th>{{ x.bloodLoss }}</th>
                 <th>{{ x.patientDesc }}</th>
-
-            
-            <th><!--View Full Patient Details-->
-                <button type="button" class="button" >
-                    <a href="Patient%20Full%20Info.html" target="_blank">View </a>
-                </button>
-            </th>
             <th>
                 <button type="button" class="button" >
-                    <a href="Surgery%20Status.html" target="_blank">Allocate </a>
+                    <a href="#" onclick="DeleteRowFunc(this)">Allocate </a>
                 </button>
             </th>
         </tr>

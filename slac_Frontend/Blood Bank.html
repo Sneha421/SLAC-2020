@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="Style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
 </head>
 <body>
 <header class="main1" style="text-align: right">
@@ -63,14 +65,32 @@
                 id="locl" name="locl" rows="4" cols="50">
         </textarea>
         <br>
-        <input type="submit" value="Send alert">
+        <button>Send Alert</button>
     </form>
 
 </header>
 <script>
-    function Confirm(){
-        alert("The alert was sent out successfully!")
-    }
+    var app = angular.module('myApp2', []);
+    app.controller('Ctrl2', function($scope, $http) {
+        
+        Confirm = function()
+        {
+            let selectElement = document.getElementById("bldgrp");
+            let valueSelected = selectElement.options[selectElement.selectedIndex].value; // get selected option value
+            var text= selectElement.options[selectElement.selectedIndex].text;
+    
+            
+            console.log(text)
+            alert("The alert was sent out successfully!")
+        }
+        
+       
+    });
+    
+    
+    
+
+    
 </script>
 
 </body>

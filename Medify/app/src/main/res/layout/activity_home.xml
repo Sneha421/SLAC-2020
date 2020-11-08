@@ -21,16 +21,16 @@
 
     <EditText
         android:id="@+id/patientAgeET"
-        android:layout_width="164dp"
-        android:layout_height="26dp"
+        android:layout_width="134dp"
+        android:layout_height="25dp"
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.104" />
+        app:layout_constraintVertical_bias="0.082" />
 
     <TextView
                 android:id="@+id/patientConscTV"
@@ -46,26 +46,27 @@
 
     <RadioGroup
         android:id="@+id/patientConscRG"
-        android:layout_width="84dp"
-        android:layout_height="45dp"
+        android:layout_width="131dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.719"
+        app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.164">
+        app:layout_constraintVertical_bias="0.166">
 
         <RadioButton
-            android:id="@+id/patientConscYes"
+            android:id="@+id/radioButton"
             android:layout_width="match_parent"
-            android:layout_height="16dp"
+            android:layout_height="31dp"
             android:text="Yes" />
 
         <RadioButton
-            android:id="@+id/patientConscNo"
+            android:id="@+id/radioButton3"
             android:layout_width="match_parent"
-            android:layout_height="22dp"
+            android:layout_height="31dp"
             android:text="No" />
+
     </RadioGroup>
 
     <TextView
@@ -98,10 +99,10 @@
         android:layout_height="95dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.762"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.406">
+        app:layout_constraintVertical_bias="0.438">
 
         <RadioButton
             android:id="@+id/bloodLossLow"
@@ -122,7 +123,7 @@
             android:text="High" />
     </RadioGroup>
 
-            <TextView
+    <TextView
                 android:id="@+id/patientGenderTV"
                 android:layout_width="79dp"
                 android:layout_height="28dp"
@@ -134,30 +135,30 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.645" />
 
-            <RadioGroup
-                android:id="@+id/patientGenderRG"
-                android:layout_width="114dp"
-                android:layout_height="81dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.77"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.642">
+    <RadioGroup
+        android:id="@+id/patientGenderRG"
+        android:layout_width="104dp"
+        android:layout_height="53dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642">
 
-                <RadioButton
-                    android:id="@+id/patientGenderMale"
-                    android:layout_width="match_parent"
-                    android:layout_height="27dp"
-                    android:text="Male" />
+        <RadioButton
+            android:id="@+id/patientGenderMale"
+            android:layout_width="match_parent"
+            android:layout_height="27dp"
+            android:text="Male" />
 
-                <RadioButton
-                    android:id="@+id/patientGenderFemale"
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:text="Female" />
+        <RadioButton
+            android:id="@+id/patientGenderFemale"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:text="Female" />
 
-            </RadioGroup>
+    </RadioGroup>
 
             <Button
                 android:id="@+id/button"
@@ -184,9 +185,9 @@
 
     <EditText
         android:id="@+id/patientDescET"
-        android:layout_width="94dp"
-        android:layout_height="32dp"
-        android:text="TextView"
+        android:layout_width="127dp"
+        android:layout_height="61dp"
+        android:text="Type Here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.785"
@@ -196,17 +197,16 @@
 
     <EditText
         android:id="@+id/accidentCategoryET"
-        android:layout_width="155dp"
-        android:layout_height="36dp"
+        android:layout_width="158dp"
+        android:layout_height="33dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.296" />
+        app:layout_constraintVertical_bias="0.295" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

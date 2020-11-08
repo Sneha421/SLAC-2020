@@ -6,7 +6,7 @@ public class queueModel
 {
     private int patientID;
     private String patientName;
-    private int phoneNumber;
+    private String phoneNumber;
 //    private Date date;
     private int tokeNumber;
 /*    private String specification;
@@ -28,11 +28,11 @@ public class queueModel
         this.patientName = patientName;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

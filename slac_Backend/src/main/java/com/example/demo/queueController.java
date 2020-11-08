@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:63344")
 public class queueController
 {
     Connection connection = null;
@@ -35,10 +35,10 @@ public class queueController
 
             queueModel.setPatientID(queueResult.getInt("patientID"));
             queueModel.setPatientName(queueResult.getString("patientName"));
-            queueModel.setPhoneNumber(queueResult.getInt("phoneNo"));
+            queueModel.setPhoneNumber(queueResult.getString("phoneNo"));
 
 //            queueModel.setDate(queueResult.getDate("date"));
-            queueModel.setTokeNumber(queueResult.getInt("tokenNo"));
+            queueModel.setTokeNumber(queueResult.getInt("token"));
 
 /*            queueModel.setSpecification(queueResult.getString("spec"));
             queueModel.setToggle(queueResult.getString("toggle"));*/
@@ -49,10 +49,11 @@ public class queueController
         return queueModelList;
     }
 
-    @PostMapping(path = "/postQueue")
+    @PutMapping(path = "/postQueue")
     public @ResponseBody void postQueue(String patientName, int phoneNo, int tokenNo)
     {
 
+        System.out.println(patientName);
         String submitQuery = "INSERT INTO patientQueue2"+
                 "(patientName, phoneNo, tokenNo) " +
                 "VALUES (?, ?, ?)";

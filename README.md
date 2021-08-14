@@ -1,5 +1,5 @@
 # SLAC-2020
-This contains the project collaboration for SLAC 2020's Try Code;Catch Bugs team
+This contains the project collaboration for SLAC 2020's ***Try Code;Catch Bugs*** team
 
 ### Theme: Healthcare
 #### Problem Statement
